@@ -7,30 +7,30 @@ package com.mycompany.concesionaria;
 
 /**
  *
- * @author Usuario
+ * @author Dcr9110
  */
-public class Moto extends Vehiculo{
-    private int cilindrada;
+public class Automovil extends Vehiculo{
+    private int puertas;
     
-    public Moto(String marca, String modelo, double precio, int cilindrada){
+    public Automovil(String marca, String modelo, double precio, int puertas){
         super(marca, modelo, precio);
-        this.cilindrada = cilindrada;
+        this.puertas = puertas;
     }
     
-    public void setCilindrada(int cilindrada){
-        this.cilindrada = cilindrada;
+    public void setPuertas(int puertas){
+        this.puertas = puertas;
     }
     
-    public int getCilindrada(){
-        return cilindrada;
+    public int getPuertas(){
+        return puertas;
     }
     
     @Override
     public void descripcion(){
         System.out.println("Marca: "+ this.getMarca() 
                     + " // Modelo: " + this.getModelo() 
-                    + " // Cilindrada: " + this.getCilindrada()
-                    + " // Precio: " + this.getPrecio());
+                    + " // Puertas: " + this.getPuertas()
+                    + " // Precio: " + this.getFormPrecio());
     }
-    
+           
 }

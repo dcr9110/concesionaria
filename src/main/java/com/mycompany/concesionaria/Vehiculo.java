@@ -6,11 +6,13 @@
 
 package com.mycompany.concesionaria;
 
+import java.text.DecimalFormat;
+
 /**
  *
- * @author Usuario
+ * @author Dcr9110
  */
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Comparable<Vehiculo> {
     private String marca;
     private String modelo;
     private double precio;
@@ -41,9 +43,25 @@ public abstract class Vehiculo {
         return precio;
     }
     
+    public String getFormPrecio(){
+        DecimalFormat formatoDeci = new DecimalFormat("#.00"); 
+        return formatoDeci.format(precio);
+    }
+    
     public void setPrecio(double precio){
         this.precio = precio;
     }
    
     public abstract void descripcion();
+    
+    @Override
+    public int compareTo(Vehiculo e){
+        if(e.getPrecio()>precio){
+            return -1;
+        }else if (e.getPrecio()<precio){
+        return 1;
+        }else{
+            return 0;
+        }
+    }
 }
